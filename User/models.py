@@ -11,8 +11,6 @@ from django.core.exceptions import ValidationError
 
 # Create your models here.
 class CustomUser(AbstractUser):
-    first_name = None
-    last_name = None
 
     # ОБЯЗАТЕЛЬНО добавь эти поля с related_name!
     groups = models.ManyToManyField(
@@ -54,5 +52,5 @@ class CustomUser(AbstractUser):
 
 
     def __str__(self):
-        return f'Имя : {self.name.title()}, Фамилия : {self.surname.title()}'
+        return f'Имя : {self.first_name.title()}, Фамилия : {self.last_name.title()}'
 
