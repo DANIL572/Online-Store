@@ -31,7 +31,6 @@ class CustomUser(AbstractUser):
     )
 
     phone = models.CharField(max_length=12, unique=True, verbose_name='phone', blank=True)
-    balance = models.DecimalField(max_digits=15, decimal_places=2, validators=[MinValueValidator(0)], default=0.00)
     is_seller = models.BooleanField(default=False, verbose_name='seller')
 
 
