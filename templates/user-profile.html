@@ -88,23 +88,6 @@
             <p><strong>Фамилия:</strong> {{ user.surname }}</p>
             <p><strong>Электронная почта:</strong> {{ user.email }}</p>
             <p><strong>Телефон:</strong> {{ user.phone }}</p>
-            <p><strong>Денег на счёте:</strong> {{ user.balance }} руб.</p>
-        </div>
-
-        <div class="balance-actions">
-            <form method="post" action="{% url 'deposit' user.id %}" style="display: inline;">
-                {% csrf_token %}
-                <input type="hidden" name="operation_type" value="deposit">
-                <input type="number" name="amount" step="0.01" min="0.01" placeholder="Сумма" required>
-                <button type="submit" class="action-btn">Пополнить</button>
-            </form>
-
-            <form method="post" action="{% url 'withdraw' user.id %}" style="display: inline;">
-                {% csrf_token %}
-                <input type="hidden" name="operation_type" value="withdraw">
-                <input type="number" name="amount" step="0.01" min="0.01" placeholder="Сумма" required>
-                <button type="submit" class="action-btn withdraw-btn">Снять</button>
-            </form>
         </div>
     </div>
 </body>
