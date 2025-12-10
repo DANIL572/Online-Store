@@ -42,7 +42,7 @@ INSTALLED_APPS = [
 
     # Созданные приложения
     'User',
-    'Auth',
+    'Registration',
 ]
 
 MIDDLEWARE = [
