@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Аутентификация Пользователя</title>
+</head>>
+<body>
+    <h2>Аутентификация</h2>
+
+    {% if form.errors %}
+    <p style="color: red;">Неверный email или пароль!</p>
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        <p>
+            Электронная почта:<br>
+            <input type="text" name="username" required>
+        </p>
+        <p>
+            Пароль:<br>
+            <input type="password" name="password" required>
+        </p>
+        <button type="submit">Войти</button>
+    </form>
+
+
+    <p>Нет аккаунта? <a href="register">Зарегистрироваться</a></p>
+</body>
+</html>
