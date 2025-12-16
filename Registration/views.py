@@ -13,4 +13,4 @@ def register_view(request):
     else:
         form = CustomUserCreationForm()
 
-    return render(request, 'register.html', {'form': form})
+    return render(request, 'registration.html', {'form': form})
